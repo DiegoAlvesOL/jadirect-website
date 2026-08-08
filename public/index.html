@@ -1,5 +1,181 @@
-<!-- Home, hero + action cards + serviços + carrossel de estatísticas -->git
+<!-- Home, hero + action cards + serviços + carrossel de estatísticas -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JADirect Logistics – Dublin, Ireland</title>
+    <meta name="description" content="JADirect is a Dublin-based logistics company offering reliable business deliveries, scheduled collections and enterprise transport solutions across Ireland.">
 
-<h1>Diego</h1>
-<h2>Apenas um teste do compose</h2>
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="JADirect Logistics">
+    <meta property="og:title" content="JADirect Logistics – Dublin, Ireland">
+    <meta property="og:description" content="JADirect is a Dublin-based logistics company offering reliable business deliveries, scheduled collections and enterprise transport solutions across Ireland.">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/globals.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+
+    <!-- PAGE STYLES -->
+    <link rel="stylesheet" href="assets/css/pages/home.css">
+
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <img src="assets/images/logo-white.png" alt="JADirect Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-image-placeholder"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text-animate">
+                <h1>Delivering Across Ireland</h1>
+                <p class="hero-subheadline">Fast. Secure. Reliable.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="action-cards-wrap">
+        <div class="action-cards">
+            <a href="pages/contact.html" class="action-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07
+            19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2
+            2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16
+            16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2
+            0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
+                <h3>Talk to Us</h3>
+                <p>Let's find the right delivery solution for your business</p>
+            </a>
+        </div>
+    </div>
+
+    <section id="services" class="section">
+        <div class="section-inner">
+            <div class="service-block">
+                <div class="service-image"></div>
+                <div class="service-card">
+                    <span class="eyebrow">Business Only</span>
+                    <h2>Enterprise Logistics Services</h2>
+                    <p>Tailored logistics solutions designed for Irish businesses. Reliable, flexible and managed end-to-end by our experienced team.</p>
+                    <div class="solutions-label">What We Offer</div>
+                    <div class="solutions-grid">
+                        <div class="solution-item"><span class="solution-dot"></span>Transport</div>
+                        <div class="solution-item"><span class="solution-dot"></span>Managed Deliveries</div>
+                        <div class="solution-item"><span class="solution-dot"></span>Same Day Delivery</div>
+                        <div class="solution-item"><span class="solution-dot"></span>Scheduled Collections</div>
+                    </div>
+                    <a href="pages/contact.html" class="btn-primary">Get Started →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-carousel-section">
+        <div class="stats-carousel-track">
+            <a href="pages/fleet.html#vans" class="stat-card">
+                <div class="stat-card-visual photo van"></div>
+                <div class="stat-card-info">
+                    <div class="stat-card-label">Where Trucks Can't Go, We Do</div>
+                    <p class="stat-card-text">Covering every street in Dublin and beyond with our van fleet.</p>
+                </div>
+            </a>
+            <a href="pages/fleet.html#trucks" class="stat-card">
+                <div class="stat-card-visual photo truck"></div>
+                <div class="stat-card-info">
+                    <div class="stat-card-label">Big Cargo, Longer Roads</div>
+                    <p class="stat-card-text">Connecting all 26 counties with our full-size truck fleet.</p>
+                </div>
+            </a>
+            <a href="pages/about.html" class="stat-card">
+                <div class="stat-card-visual number">
+                    <span data-stat="avgDailyDeliveries">0</span>
+                </div>
+                <div class="stat-card-info">
+                    <div class="stat-card-label">Average Daily Deliveries</div>
+                </div>
+            </a>
+            <a href="pages/about.html" class="stat-card">
+                <div class="stat-card-visual number">
+                    <span data-stat="walkaroundChecks">0</span>
+                </div>
+                <div class="stat-card-info">
+                    <div class="stat-card-label">Walkaround Checks Completed</div>
+                    <p class="stat-card-text">Every vehicle is regularly inspected to keep our fleet road-ready.</p>
+                </div>
+            </a>
+
+            <a href="pages/fleet.html#vans" class="stat-card">
+                <div class="stat-card-visual photo van"></div>
+                <div class="stat-card-info">
+                    <div class="stat-card-label">Where Trucks Can't Go, We Do</div>
+                    <p class="stat-card-text">Covering every street in Dublin and beyond with our van fleet.</p>
+                </div>
+            </a>
+            <a href="pages/fleet.html#trucks" class="stat-card">
+                <div class="stat-card-visual photo truck"></div>
+                <div class="stat-card-info">
+                    <div class="stat-card-label">Big Cargo, Longer Roads</div>
+                    <p class="stat-card-text">Connecting all 26 counties with our full-size truck fleet.</p>
+                </div>
+            </a>
+            <a href="pages/about.html" class="stat-card">
+                <div class="stat-card-visual number">
+                    <span data-stat="avgDailyDeliveries">0</span>
+                </div>
+                <div class="stat-card-info">
+                    <div class="stat-card-label">Average Daily Deliveries</div>
+                </div>
+            </a>
+            <a href="pages/about.html" class="stat-card">
+                <div class="stat-card-visual number">
+                    <span data-stat="walkaroundChecks">0</span>
+                </div>
+                <div class="stat-card-info">
+                    <div class="stat-card-label">Walkaround Checks Completed</div>
+                    <p class="stat-card-text">Every vehicle is regularly inspected to keep our fleet road-ready.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="#">Privacy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Legal Notice</a>
+                <a href="#">Cookie Settings</a>
+            </div>
+            <div class="footer-copy">2026 © JADirect Logistics – All rights reserved</div>
+        </div>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="data/siteData.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@
     "test:a11y": "pa11y-ci --config tests/a11y/a11y.config.js",
     "test:links": "linkinator public --config tests/links/links.config.js",
     "lint:html": "htmlhint \"public/*.html\" \"public/pages/*.html\"",
-    "lint:css": "stylelint public/assets/css/**/*.css"
+    "lint:css": "stylelint \"public/assets/css/**/*.css\""
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "linkinator": "^8.0.3",
     "pa11y-ci": "^4.1.1",
     "stylelint": "^17.14.1",
+    "stylelint-config-standard": "^40.0.0",
     "vitest": "^4.1.10"
   }
 }

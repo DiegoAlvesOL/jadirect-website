@@ -1,1 +1,116 @@
 /* Globals, variáveis de cor, tipografia e sombra usadas em todo o site */
+
+/**
+ * Purpose   : Global CSS variables, reset, and typography
+ * Consumed by: All pages
+ * Layer     : Presentation — Global Styles
+ */
+
+:root {
+    /* COLORS */
+    --teal: #008080;
+    --teal-dark: #066;
+    --teal-light: #e6f3f3;
+    --white: #fff;
+    --gray-50: #f8f9fa;
+    --gray-100: #f1f3f4;
+    --gray-200: #e9ecef;
+    --gray-400: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-800: #343a40;
+    --gray-900: #1a1f24;
+
+    /* SHADOWS */
+    --shadow-sm: 0 1px 4px rgb(0 0 0 / 6%);
+    --shadow-md: 0 4px 12px rgb(0 0 0 / 10%);
+    --shadow-lg: 0 8px 32px rgb(0 0 0 / 12%);
+
+    /* SPACING & RADIUS */
+    --radius: 4px;
+    --radius-lg: 12px;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Barlow, sans-serif;
+    color: var(--gray-800);
+    background: var(--white);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: Barlow, sans-serif;
+    cursor: pointer;
+}
+
+input,
+textarea,
+select {
+    font-family: Barlow, sans-serif;
+}
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* UTILITIES */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border-width: 0;
+}

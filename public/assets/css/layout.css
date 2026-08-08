@@ -1,1 +1,158 @@
 /* Layout, header, footer e nav, compartilhados entre páginas */
+
+/**
+ * Purpose   : Layout styles for navbar, footer, and structural components
+ * Consumed by: All pages
+ * Layer     : Presentation — Layout Components
+ */
+
+/* UTILITY BAR */
+.utility-bar {
+    background: var(--teal-dark);
+    padding: 8px 0;
+}
+
+.utility-bar .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+}
+
+.utility-bar a {
+    color: rgb(255 255 255 / 85%);
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+}
+
+.utility-bar a:hover {
+    color: #fff;
+}
+
+.utility-bar .divider {
+    color: rgb(255 255 255 / 30%);
+    font-size: 12px;
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--teal);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    gap: 40px;
+}
+
+.navbar-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo .logo-img {
+    max-height: 40px;
+    width: auto;
+}
+
+.navbar-logo span {
+    color: rgb(255 255 255 / 60%);
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: rgb(255 255 255 / 90%);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.nav-links li a:hover {
+    background: rgb(255 255 255 / 15%);
+    color: #fff;
+}
+
+/* FOOTER */
+.footer {
+    background: var(--white);
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer .container {
+    padding: 0 24px;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-legal a {
+    font-size: 12px;
+    color: var(--gray-600);
+    transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+    color: var(--gray-900);
+}
+
+.footer-copy {
+    font-size: 12px;
+    color: var(--gray-600);
+}
+
+/* RESPONSIVE */
+@media (width <= 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .navbar .container {
+        gap: 16px;
+    }
+
+    .utility-bar .container {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
