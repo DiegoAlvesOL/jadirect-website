@@ -1,0 +1,35 @@
+{
+  "name": "jadirect-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:a11y": "pa11y-ci --config tests/a11y/a11y.config.js",
+    "test:links": "linkinator public --config tests/links/links.config.js",
+    "lint:html": "htmlhint \"public/*.html\" \"public/pages/*.html\"",
+    "lint:css": "stylelint public/assets/css/**/*.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoAlvesOL/jadirect-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DiegoAlvesOL/jadirect-website/issues"
+  },
+  "homepage": "https://github.com/DiegoAlvesOL/jadirect-website#readme",
+  "devDependencies": {
+    "htmlhint": "^1.9.2",
+    "linkinator": "^8.0.3",
+    "pa11y-ci": "^4.1.1",
+    "stylelint": "^17.14.1",
+    "vitest": "^4.1.10"
+  }
+}
