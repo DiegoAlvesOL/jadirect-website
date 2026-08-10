@@ -141,6 +141,36 @@
     color: var(--gray-600);
 }
 
+/* SHARED COMPONENTS - BUTTONS */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--teal);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Barlow, sans-serif;
+    padding: 13px 28px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+    align-self: flex-start;
+}
+
+.btn-primary:hover {
+    background: var(--teal-dark);
+}
+
+.btn-primary.full-width {
+    width: 100%;
+    align-self: unset;
+}
+
+
 /* RESPONSIVE */
 @media (width <= 768px) {
     .nav-links {
