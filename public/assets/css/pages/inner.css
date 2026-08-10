@@ -252,3 +252,233 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* PAGE HERO (Fleet, Contact, Legal) */
+.page-hero {
+    position: relative;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--gray-200);
+}
+
+.page-hero-image {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgb(0 80 80 / 55%) 0%, rgb(0 0 0 / 15%) 70%, transparent 100%);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    width: 100%;
+}
+
+.page-hero-content h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+.page-hero-subheadline {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255 255 255 / 90%);
+    margin-top: 10px;
+    text-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+/* FLEET INTRO */
+.fleet-intro {
+    padding: 48px 0 0;
+    background: var(--white);
+}
+
+.fleet-intro .eyebrow {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gray-600);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.fleet-intro h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--gray-900);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.fleet-intro p {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+/* SPLIT SECTION */
+.split-section {
+    padding: 88px 0;
+    background: var(--white);
+}
+
+.split-section.alt {
+    background: var(--gray-50);
+}
+
+/* SPLIT BLOCK (foto sobreposta por card, mesmo efeito do service-block da Home) */
+.split-block {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    align-items: center;
+    gap: 0;
+}
+
+.split-block.reverse {
+    grid-template-columns: 1fr 1.25fr;
+}
+
+.split-block.reverse .split-photo {
+    order: 2;
+}
+
+.split-block.reverse .split-card {
+    order: 1;
+    margin-left: 0;
+    margin-right: -30px;
+}
+
+.split-photo {
+    height: 320px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.split-card {
+    background: #fff;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 60px rgb(0 0 0 / 35%);
+    margin-left: -30px;
+    position: relative;
+    z-index: 2;
+}
+
+.split-card h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--gray-900);
+}
+
+.split-card p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+.feature-list {
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    margin: 4px 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 10px;
+}
+
+.feature-item:last-child {
+    margin-bottom: 0;
+}
+
+.feature-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--teal);
+    flex-shrink: 0;
+}
+
+.feature-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentcolor;
+    fill: none;
+    stroke-width: 1.6;
+}
+
+@media (width <= 768px) {
+    .split-section {
+        padding: 56px 0;
+    }
+
+    .split-block,
+    .split-block.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .split-block.reverse .split-photo {
+        order: 1;
+    }
+
+    .split-block.reverse .split-card {
+        order: 2;
+    }
+
+    .split-card {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: -40px;
+        margin-inline: 16px;
+    }
+}
+
+/* Fleet page, background images */
+.fleet-hero-image {
+    background-image: url('../../images/warehouse-loading.png');
+}
+
+.fleet-trucks-split-image {
+    background-image: url('../../images/fleet-truck-square.png');
+}
+
+.fleet-vans-split-image {
+    background-image: url('../../images/fleet-van-square.png');
+}
