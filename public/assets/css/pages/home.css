@@ -210,6 +210,7 @@
     border-radius: var(--radius-lg);
     box-shadow: 0 24px 60px rgb(0 0 0 / 35%);
     margin-left: -30px;
+    height: 350px;
     position: relative;
     z-index: 2;
 }

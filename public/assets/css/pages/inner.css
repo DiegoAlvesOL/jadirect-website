@@ -310,7 +310,6 @@
 
 .fleet-intro .eyebrow {
     display: block;
-    text-align: center;
     font-size: 12px;
     font-weight: 700;
     color: var(--gray-600);
@@ -324,14 +323,10 @@
     font-size: 26px;
     font-weight: 800;
     color: var(--gray-900);
-    text-align: center;
     margin-bottom: 12px;
 }
 
 .fleet-intro p {
-    max-width: 720px;
-    margin: 0 auto;
-    text-align: center;
     font-size: 15px;
     color: var(--gray-600);
     line-height: 1.7;
@@ -365,12 +360,6 @@
     order: 2;
 }
 
-.split-block.reverse .split-card {
-    order: 1;
-    margin-left: 0;
-    margin-right: -30px;
-}
-
 .split-photo {
     height: 320px;
     border-radius: var(--radius-lg);
@@ -381,67 +370,143 @@
     position: relative;
 }
 
-.split-card {
+/* SPLIT VAN CARD, independente do truck, ajustes aqui não afetam o truck */
+.split-card-van {
     background: #fff;
-    padding: 28px 32px;
+    padding: 10px 32px 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 12px;
     border-radius: var(--radius-lg);
     box-shadow: 0 24px 60px rgb(0 0 0 / 35%);
     margin-left: -30px;
+    height: 300px;
     position: relative;
     z-index: 2;
 }
 
-.split-card h2 {
+.split-card-van h2 {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 26px;
     font-weight: 800;
     color: var(--gray-900);
 }
 
-.split-card p {
+.split-card-van p {
     font-size: 14px;
     color: var(--gray-600);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-.feature-list {
+.split-card-van .feature-list {
     background: var(--gray-100);
-    border-radius: var(--radius-lg);
-    padding: 16px 20px;
-    margin: 4px 0;
+    margin: 4px -32px;
+    padding: 16px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
 }
 
-.feature-item {
+.split-card-van .feature-item {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 13px;
     font-weight: 600;
     color: var(--gray-800);
-    margin-bottom: 10px;
 }
 
-.feature-item:last-child {
-    margin-bottom: 0;
-}
-
-.feature-icon {
+.split-card-van .feature-icon {
     width: 20px;
     height: 20px;
     color: var(--teal);
     flex-shrink: 0;
 }
 
-.feature-icon svg {
+.split-card-van .feature-icon svg {
     width: 100%;
     height: 100%;
     stroke: currentcolor;
     fill: none;
     stroke-width: 1.6;
+}
+
+.split-card-van .btn-primary {
+    align-self: stretch;
+    text-align: center;
+    padding: 12px 24px;
+    margin-top: auto;
+    border-radius: 10px;
+}
+
+/* SPLIT TRUCK CARD, independente do van, ajustes aqui não afetam o van */
+.split-card-truck {
+    background: #fff;
+    padding: 10px 32px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 60px rgb(0 0 0 / 35%);
+    margin-right: -30px;
+    height: 300px;
+    position: relative;
+    z-index: 2;
+    order: 1;
+}
+
+.split-card-truck h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--gray-900);
+}
+
+.split-card-truck p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+
+.split-card-truck .feature-list {
+    background: var(--gray-100);
+    margin: 4px -32px;
+    padding: 16px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+}
+
+.split-card-truck .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-800);
+}
+
+.split-card-truck .feature-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--teal);
+    flex-shrink: 0;
+}
+
+.split-card-truck .feature-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentcolor;
+    fill: none;
+    stroke-width: 1.6;
+}
+
+.split-card-truck .btn-primary {
+    align-self: stretch;
+    text-align: center;
+    padding: 12px 24px;
+    margin-top: auto;
+    border-radius: 10px;
 }
 
 @media (width <= 768px) {
@@ -458,11 +523,12 @@
         order: 1;
     }
 
-    .split-block.reverse .split-card {
+    .split-card-truck {
         order: 2;
     }
 
-    .split-card {
+    .split-card-van,
+    .split-card-truck {
         margin-left: 0;
         margin-right: 0;
         margin-top: -40px;

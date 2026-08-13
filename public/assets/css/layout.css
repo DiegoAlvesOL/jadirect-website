@@ -161,6 +161,7 @@
     align-self: flex-start;
 }
 
+
 .btn-primary:hover {
     background: var(--teal-dark);
 }
@@ -168,6 +169,17 @@
 .btn-primary.full-width {
     width: 100%;
     align-self: unset;
+}
+
+/* SHARED COMPONENTS - SECTION INNER */
+/* Fonte única de verdade para largura e respiro lateral do conteúdo interno */
+/* de qualquer section, usada por TODAS as páginas (Home, About, Fleet, Contact, Legal). */
+/* Usa padding-inline (não padding) de propósito, assim uma classe específica pode */
+/* somar padding-block (vertical) sem sobrescrever o padding horizontal por engano. */
+.section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 24px;
 }
 
 
