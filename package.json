@@ -27,6 +27,7 @@
   "homepage": "https://github.com/DiegoAlvesOL/jadirect-website#readme",
   "devDependencies": {
     "htmlhint": "^1.9.2",
+    "jsdom": "^29.1.1",
     "linkinator": "^8.0.3",
     "pa11y-ci": "^4.1.1",
     "stylelint": "^17.14.1",
