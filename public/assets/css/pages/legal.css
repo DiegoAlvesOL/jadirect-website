@@ -1,1 +1,104 @@
-/* Legal, estilos específicos da página legal */
+/* Legal, estilos exclusivos da página Legal */
+
+/**
+ * Purpose   : Page-specific styles for pages/legal.html
+ * Consumed by: legal.html only
+ * Layer     : Presentation — Page Styles
+ *
+ * Reuses .page-hero and .page-hero-content from inner.css, this file only
+ * adds what is exclusive to the Legal page: the solid hero background (no
+ * photo, unlike Fleet/Contact), the anchor navigation bar, and the plain
+ * text sections. No new colors are introduced, everything comes from the
+ * gray scale already used across inner.css.
+ */
+
+/* LEGAL HERO, mesma estrutura de .page-hero, sem foto de fundo */
+.legal-hero {
+    background: var(--teal);
+}
+
+/* LEGAL ANCHOR NAV */
+.legal-anchor-nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.legal-anchor-nav .section-inner {
+    padding: 16px 24px;
+}
+
+.legal-anchor-nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    list-style: none;
+}
+
+.legal-anchor-nav a {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray-800);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.legal-anchor-nav a:hover {
+    color: var(--teal);
+}
+
+/* LEGAL SECTION */
+.legal-section {
+    padding: 64px 0;
+    background: var(--white);
+}
+
+.legal-section.alt {
+    background: var(--gray-50);
+}
+
+.legal-section .section-inner {
+    max-width: 780px;
+}
+
+.legal-section h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.legal-section h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-top: 28px;
+    margin-bottom: 8px;
+}
+
+.legal-section p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+@media (width <= 768px) {
+    .legal-anchor-nav ul {
+        gap: 14px;
+    }
+
+    .legal-anchor-nav a {
+        font-size: 12px;
+    }
+
+    .legal-section {
+        padding: 48px 0;
+    }
+}
