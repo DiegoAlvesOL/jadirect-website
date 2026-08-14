@@ -7,6 +7,8 @@ module.exports = {
     defaults: {
         timeout: 30000,
         wait: 1000,
+        runners: ["axe", "htmlcs"],
+        includeWarnings: true,
     },
 
     urls: [
