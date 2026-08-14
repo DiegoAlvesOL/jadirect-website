@@ -1,1 +1,298 @@
-/* Contact, estilos específicos do formulário de contato */
+/* Contact, hero, how it works, concierge, formulário e cards de confiança */
+
+/**
+ * Purpose   : Styles for the Contact page (hero, how it works, concierge,
+ *             form and trust cards). Self-contained because contact.html
+ *             does not import inner.css.
+ * Consumed by: Contact
+ * Layer     : Presentation — Page Styles
+ */
+
+/* CONTACT HERO */
+.contact-hero {
+    position: relative;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--gray-200);
+}
+
+.contact-hero-image {
+    position: absolute;
+    inset: 0;
+    background: url('../../images/contact-hero.png') center/cover no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgb(0 80 80 / 55%) 0%, rgb(0 0 0 / 15%) 70%, transparent 100%);
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.page-back-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(255 255 255 / 85%);
+    margin-bottom: 16px;
+    transition: color 0.2s;
+}
+
+.page-back-link:hover {
+    color: #fff;
+}
+
+.contact-hero-content h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+.contact-hero-sub {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255 255 255 / 90%);
+    margin-top: 10px;
+    text-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+/* HOW IT WORKS */
+.how-it-works {
+    padding: 56px 0;
+    background: var(--white);
+}
+
+.how-it-works h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gray-900);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.steps-list {
+    max-width: 720px;
+    margin: 0 auto;
+    list-style: none;
+    counter-reset: step;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.steps-list li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 44px;
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+.steps-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.steps-list strong {
+    color: var(--gray-900);
+}
+
+/* CONTACT CONCIERGE */
+.contact-concierge {
+    padding: 56px 0;
+    background: var(--gray-50);
+}
+
+.concierge-content{
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.contact-info-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 12px;
+}
+
+.contact-info-text {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 14px;
+}
+
+.contact-detail:last-child {
+    margin-bottom: 0;
+}
+
+.contact-detail svg {
+    width: 20px;
+    height: 20px;
+    color: var(--teal);
+    stroke: currentcolor;
+    fill: none;
+    stroke-width: 1.6;
+    flex-shrink: 0;
+}
+
+/* CONTACT FORM */
+.contact-form-section {
+    padding: 56px 0;
+    background: var(--white);
+}
+
+.form-card {
+    max-width: 560px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-card h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-800);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--gray-900);
+    background: var(--white);
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.full-width {
+    width: 100%;
+    text-align: center;
+}
+
+/* TRUST CARDS */
+.trust-cards {
+    padding: 56px 0 72px;
+    background: var(--gray-50);
+}
+
+.advantages-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 40px;
+}
+
+.advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.advantage-dot {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    border-radius: 50%;
+    background: var(--teal);
+    margin-top: 6px;
+}
+
+.advantage-item h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+}
+
+.advantage-item p {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (width <= 768px) {
+    .advantages-list {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 24px;
+        margin-inline: 16px;
+    }
+}
