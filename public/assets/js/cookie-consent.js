@@ -3,12 +3,16 @@
 /**
  * Purpose    : Controla o banner de consentimento de cookies, com máquina de estado
  *              (pending, accepted, rejected), persistência da escolha via localStorage,
- *              e reabertura do painel pelo link "Cookie Settings" do rodapé.
+ *              carregamento condicional do GA4 após consentimento, e reabertura do painel
+ *              pelo link "Cookie Settings" do rodapé.
  * Consumed by: index.html, pages/about.html, pages/fleet.html, pages/contact.html, pages/legal.html
  * Layer      : Presentation - DOM logic
  */
 
 const CONSENT_STORAGE_KEY = 'jadirect_cookie_consent';
+
+// TODO (Card 26): substituir por variável de ambiente injetada no Railway
+const GA_MEASUREMENT_ID = 'G-RGXT1HEHB9';
 
 export const CONSENT_STATES = {
     PENDING: 'pending',
@@ -52,6 +56,38 @@ export function persistConsent(status) {
     };
 
     window.localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(payload));
+}
+
+let analyticsLoaded = false;
+
+/**
+ * Injeta dinamicamente o script do Google Analytics 4 e inicializa o gtag.
+ * Só deve ser chamada após consentimento explícito (accepted), nunca de forma incondicional.
+ * A flag analyticsLoaded evita injetar a tag duas vezes na mesma navegação, por exemplo
+ * se o visitante reabrir o painel via "Cookie Settings" e clicar em "Accept" novamente.
+ * @param {string} measurementId - O Measurement ID da propriedade GA4 (formato G-XXXXXXX)
+ * @returns {void}
+ */
+function loadAnalytics(measurementId) {
+    if (analyticsLoaded) {
+        return;
+    }
+
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.appendChild(gtagScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', measurementId);
+
+    analyticsLoaded = true;
 }
 
 let bannerElement = null;
@@ -155,6 +191,7 @@ function handleBannerClick(event) {
 
     if (action === 'accept') {
         persistConsent(CONSENT_STATES.ACCEPTED);
+        loadAnalytics(GA_MEASUREMENT_ID);
         hideBanner();
         return;
     }
@@ -220,7 +257,8 @@ export function reopenCookiePreferences() {
 }
 
 /**
- * Inicializa o banner, exibindo-o só quando não houver decisão registrada,
+ * Inicializa o banner, exibindo-o só quando não houver decisão registrada, carrega o GA4
+ * imediatamente quando já existe consentimento ACCEPTED salvo de uma visita anterior,
  * e vincula o link "Cookie Settings" do rodapé para reabrir o painel a qualquer momento.
  * @returns {void}
  */
@@ -229,6 +267,10 @@ export function initCookieConsent() {
 
     if (currentConsent === CONSENT_STATES.PENDING) {
         showBanner();
+    }
+
+    if (currentConsent === CONSENT_STATES.ACCEPTED) {
+        loadAnalytics(GA_MEASUREMENT_ID);
     }
 
     const settingsLink = document.getElementById('cookie-settings-link');
