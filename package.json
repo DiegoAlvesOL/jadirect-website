@@ -9,7 +9,7 @@
   "scripts": {
     "test": "vitest run",
     "test:a11y": "pa11y-ci --config tests/a11y/a11y.config.js",
-    "test:links": "linkinator public --config tests/links/links.config.js",
+    "test:links": "linkinator http://localhost:8081 --config tests/links/links.config.js",
     "lint:html": "htmlhint \"public/*.html\" \"public/pages/*.html\"",
     "lint:css": "stylelint \"public/assets/css/**/*.css\""
   },

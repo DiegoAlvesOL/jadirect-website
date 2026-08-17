@@ -3,7 +3,7 @@
 // Layer      : Testing / Quality assurance
 
 module.exports = {
-    path: "public",
+    path: "http://localhost:8081",
     recurse: true,
     silent: false
 };
