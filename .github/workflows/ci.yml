@@ -31,6 +31,11 @@ jobs:
       - name: Testes unitários
         run: npm test
 
+      - name: Criar .env.local para o CI
+        run: |
+          echo "WEB3FORMS_ACCESS_KEY=ci-placeholder-key" >> .env.local
+          echo "WEB3FORMS_REDIRECT_URL=http://localhost:8081/pages/thank-you.html" >> .env.local
+
       - name: Subir ambiente local (Docker Compose)
         run: docker compose up --build -d
 
