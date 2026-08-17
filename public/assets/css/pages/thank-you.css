@@ -1,0 +1,23 @@
+/* Thank You, estado de confirmação após envio do formulário via Web3Forms */
+
+/**
+ * Purpose   : Page-specific styles for pages/thank-you.html
+ * Consumed by: thank-you.html only
+ * Layer     : Presentation — Page Styles
+ *
+ * Reuses .page-hero and .page-hero-content from inner.css, this file only
+ * adds what is exclusive to the Thank You page: the solid hero background
+ * (no photo, same approach as .legal-hero) and spacing for the button that
+ * follows the subheadline. No new colors are introduced, everything comes
+ * from the palette already used across inner.css.
+ */
+
+/* THANK YOU HERO, mesma estrutura de .page-hero, sem foto de fundo */
+.thank-you-hero {
+    background: var(--teal);
+}
+
+.thank-you-hero .btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+}

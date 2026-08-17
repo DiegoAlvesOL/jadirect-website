@@ -39,3 +39,30 @@ export function buildFormSubject(type, name) {
 document.addEventListener('DOMContentLoaded', () => {
     fillStats();
 });
+
+
+/**
+ * Vincula o preenchimento do campo oculto "subject" do formulário de contato,
+ * a partir do tipo de solicitação e do nome informado, antes do POST nativo para o Web3Forms.
+ * @returns {void}
+ */
+function bindContactFormSubject() {
+    const form = document.getElementById('contact-form');
+
+    if (form === null) {
+        return;
+    }
+
+    form.addEventListener('submit', () => {
+        const enquiryType = document.getElementById('enquiry-type').value;
+        const fullName = document.getElementById('contact-name').value;
+        const subjectField = document.getElementById('form-subject');
+
+        subjectField.value = buildFormSubject(enquiryType, fullName);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    fillStats();
+    bindContactFormSubject();
+});
