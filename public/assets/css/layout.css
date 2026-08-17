@@ -280,7 +280,7 @@
     color: var(--gray-600);
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .cookie-consent-banner {
         left: 12px;
         right: 12px;
