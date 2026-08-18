@@ -52,7 +52,7 @@
         </div>
     </section>
 
-    <section class="how-it-works">
+    <section class="how-it-works reveal">
         <div class="container">
             <h2>How It Works</h2>
             <ol class="steps-list">
@@ -63,7 +63,7 @@
         </div>
     </section>
 
-    <section class="contact-concierge">
+    <section class="contact-concierge reveal">
         <div class="container">
             <div class="concierge-content">
                 <h2 class="contact-info-title">Concierge Service</h2>
@@ -95,7 +95,7 @@
         </div>
     </section>
 
-    <section class="contact-form-section">
+    <section class="contact-form-section reveal">
         <div class="container">
             <form
                 class="form-card"
@@ -142,7 +142,7 @@
         </div>
     </section>
 
-    <section class="trust-cards">
+    <section class="trust-cards reveal">
         <div class="container">
             <div class="advantages-list">
                 <div class="advantage-item">
@@ -191,6 +191,9 @@
         </div>
     </div>
 </footer>
+
+
+<!-- SCRIPTS -->
 <script type="module" src="../assets/js/main.js"></script>
 <script type="module" src="../assets/js/view-transitions.js"></script>
 <script type="module" src="../assets/js/cookie-consent.js"></script>
