@@ -385,6 +385,23 @@
 }
 
 /* RESPONSIVE */
+@media (width <= 1024px) {
+    .service-card {
+        padding: 24px 28px;
+        margin-left: -16px;
+        height: auto;
+        min-height: 300px;
+    }
+
+    .service-image {
+        height: 340px;
+    }
+
+    .solutions-grid {
+        gap: 8px 16px;
+    }
+}
+
 @media (width <= 768px) {
     .hero-content h1 {
         font-size: 32px;
