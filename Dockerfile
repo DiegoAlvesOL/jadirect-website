@@ -8,6 +8,8 @@ COPY public/index.html /usr/share/nginx/html/index.html
 COPY public/pages/about.html public/pages/fleet.html public/pages/legal.html public/pages/thank-you.html /usr/share/nginx/html/pages/
 COPY public/assets/ /usr/share/nginx/html/assets/
 COPY public/data/ /usr/share/nginx/html/data/
+COPY public/sitemap.xml /usr/share/nginx/html/sitemap.xml
+COPY public/robots.txt /usr/share/nginx/html/robots.txt
 
 COPY public/pages/contact.html.template /etc/nginx/templates/pages/contact.html.template
 ENV NGINX_ENVSUBST_OUTPUT_DIR=/usr/share/nginx/html
