@@ -112,7 +112,7 @@
                 <div class="form-group">
                     <label for="enquiry-type">What can we help with?</label>
                     <select id="enquiry-type" name="enquiryType">
-                        <option value="general">General Enquiry</option>
+                        <option value="general" selected>General Enquiry</option>
                         <option value="quote">Request a Quote</option>
                     </select>
                 </div>
@@ -148,28 +148,28 @@
                 <div class="advantage-item">
                     <span class="advantage-dot"></span>
                     <div>
-                        <h4>No Commitment Required</h4>
+                        <h3>No Commitment Required</h3>
                         <p>Get in touch with no obligation to proceed.</p>
                     </div>
                 </div>
                 <div class="advantage-item">
                     <span class="advantage-dot"></span>
                     <div>
-                        <h4>Direct Support</h4>
+                        <h3>Direct Support</h3>
                         <p>Our team reviews every request personally.</p>
                     </div>
                 </div>
                 <div class="advantage-item">
                     <span class="advantage-dot"></span>
                     <div>
-                        <h4>Tailored to Your Needs</h4>
+                        <h3>Tailored to Your Needs</h3>
                         <p>We work with your actual route, volume and requirements.</p>
                     </div>
                 </div>
                 <div class="advantage-item">
                     <span class="advantage-dot"></span>
                     <div>
-                        <h4>Ireland-Wide Coverage</h4>
+                        <h3>Ireland-Wide Coverage</h3>
                         <p>We collect and deliver anywhere in Ireland, any county.</p>
                     </div>
                 </div>
@@ -181,12 +181,12 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-bottom">
-            <div class="footer-legal">
-                <a href="legal.html#privacy">Privacy</a>
-                <a href="legal.html#terms">Terms of Use</a>
-                <a href="legal.html#legal-notice">Legal Notice</a>
-                <a href="legal.html#cookies" id="cookie-settings-link">Cookie Settings</a>
-            </div>
+            <ul class="footer-legal">
+                <li><a href="legal.html#privacy">Privacy</a></li>
+                <li><a href="legal.html#terms">Terms of Use</a></li>
+                <li><a href="legal.html#legal-notice">Legal Notice</a></li>
+                <li><a href="legal.html#cookies" id="cookie-settings-link">Cookie Settings</a></li>
+            </ul>
             <div class="footer-copy">2026 © JADirect Logistics – All rights reserved</div>
         </div>
     </div>
