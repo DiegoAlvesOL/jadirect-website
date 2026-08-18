@@ -6,6 +6,12 @@
  * Layer     : Presentation — Global Styles
  */
 
+/* Card 24, ativa Cross-Document View Transitions entre as páginas do site */
+@view-transition {
+    navigation: auto;
+}
+
+
 :root {
     /* COLORS */
     --teal: #008080;
