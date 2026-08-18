@@ -15,5 +15,11 @@ module.exports = {
     concurrency: 5,
     timeout: 15000,
     retry: true,
-    retryErrorsCount: 3
+    retryErrorsCount: 3,
+    // As tags og:url e og:image (Card 20) apontam para o dominio de producao jadirect.ie,
+    // que so passa a resolver de verdade apos o Card 27 (DNS). Testar se producao esta no
+    // ar nao e papel deste pipeline, que roda contra localhost:8081, isso e validado
+    // manualmente no Card 29 (auditoria final, ja em producao). Pular esses links aqui evita
+    // falso negativo permanente ate o DNS propagar, sem esconder link local quebrado de verdade.
+    skip: ["https://jadirect\\.ie"]
 };
