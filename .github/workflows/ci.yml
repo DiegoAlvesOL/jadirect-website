@@ -22,9 +22,6 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
-      - name: Instalar Chrome para o Puppeteer
-        run: npx puppeteer browsers install chrome
-
       - name: Lint HTML
         run: npm run lint:html
 
@@ -51,6 +48,8 @@ jobs:
           done
 
       - name: Teste de acessibilidade
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
         run: npm run test:a11y
 
       - name: Teste de links quebrados
