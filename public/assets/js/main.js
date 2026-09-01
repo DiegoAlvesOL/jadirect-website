@@ -71,6 +71,81 @@ export function initScrollReveal() {
     revealElements.forEach((el) => observer.observe(el));
 }
 
+/**
+ * Anima um elemento de 0 até targetValue, atualizando o texto a cada frame.
+ * @param {HTMLElement} element - Elemento cujo textContent será animado
+ * @param {number} targetValue - Valor final da contagem
+ * @param {number} duration - Duração da animação em milissegundos
+ * @returns {void}
+ */
+function animateCountUp(element, targetValue, duration = 1500) {
+    const startTime = performance.now();
+
+    function step(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const currentValue = Math.floor(progress * targetValue);
+
+        element.textContent = currentValue.toLocaleString('en-IE');
+
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        } else {
+            element.textContent = targetValue.toLocaleString('en-IE');
+        }
+    }
+
+    requestAnimationFrame(step);
+}
+
+/**
+ * Anima os números da seção about-stats de 0 até o valor final, disparando
+ * quando cada elemento entra na viewport. Respeita prefers-reduced-motion,
+ * caso em que o valor final já escrito por fillStats() é mantido sem animação.
+ * @returns {void}
+ */
+export function initAboutStatsCountUp() {
+    const statNumberElements = document.querySelectorAll('.about-stats-inner [data-stat]');
+
+    if (statNumberElements.length === 0) {
+        return;
+    }
+
+    const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (prefersReducedMotion) {
+        return;
+    }
+
+    statNumberElements.forEach((element) => {
+        element.textContent = '0';
+    });
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const statKey = entry.target.getAttribute('data-stat');
+                    const targetValue = siteData.stats[statKey];
+
+                    if (targetValue !== undefined) {
+                        animateCountUp(entry.target, targetValue);
+                    }
+
+                    obs.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.3,
+        }
+    );
+
+    statNumberElements.forEach((element) => observer.observe(element));
+}
+
 
 /**
  * Vincula o preenchimento do campo oculto "subject" do formulário de contato,
@@ -96,5 +171,6 @@ function bindContactFormSubject() {
 document.addEventListener('DOMContentLoaded', () => {
     fillStats();
     initScrollReveal();
+    initAboutStatsCountUp();
     bindContactFormSubject();
 });
