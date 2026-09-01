@@ -127,11 +127,56 @@
     line-height: 1.6;
 }
 
-.about-sponsor-image img {
+/* SPONSOR GALLERY */
+.sponsor-gallery {
+    position: relative;
+    min-height: 360px;
+}
+
+.sponsor-gallery-item {
+    position: absolute;
+    width: 320px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sponsor-gallery-item img {
     width: 100%;
     display: block;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+}
+
+.sponsor-gallery-item-1 {
+    left: 0;
+    top: 10px;
+    transform: rotate(-6deg);
+    z-index: 1;
+}
+
+.sponsor-gallery-item-2 {
+    left: 90px;
+    top: -10px;
+    transform: rotate(3deg);
+    z-index: 2;
+}
+
+.sponsor-gallery-item-3 {
+    left: 180px;
+    top: 20px;
+    transform: rotate(-2deg);
+    z-index: 3;
+}
+
+.sponsor-gallery-item:hover,
+.sponsor-gallery-item:focus-visible {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 24px 60px rgb(0 0 0 / 35%);
+    z-index: 5;
 }
 
 /* ABOUT STATS */
@@ -242,6 +287,25 @@
 
     .about-sponsor-inner {
         grid-template-columns: 1fr;
+    }
+
+    .sponsor-gallery {
+        position: static;
+        display: flex;
+        justify-content: center;
+        min-height: auto;
+        margin-top: 24px;
+    }
+
+    .sponsor-gallery-item {
+        position: static;
+        width: 100px;
+        transform: none;
+        margin-left: -20px;
+    }
+
+    .sponsor-gallery-item:first-child {
+        margin-left: 0;
     }
 
     .about-stats-inner {
@@ -570,4 +634,38 @@
 
 .fleet-vans-split-image {
     background-image: url('../../images/fleet-van-square.png');
+}
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgb(0 0 0 / 85%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
 }

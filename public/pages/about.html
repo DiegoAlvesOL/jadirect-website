@@ -150,13 +150,26 @@
         <div class="about-sponsor-inner">
             <div class="about-sponsor-content">
                 <h2>Proud to Support Our Community</h2>
-                <p>Beyond logistics, JADirect believes in giving back to the communities we serve. We are proud sponsors of <!-- PLACEHOLDER: confirmar com o Johnny -->[Coloque o time aqui], representing the [Coloque o bairro aqui] area. It is our way of showing that reliability and commitment extend beyond the road.</p>
+                <p>Beyond logistics, JADirect believes in giving back to the communities we serve. We are proud sponsors of several local sports teams, including Tyrrelstown United FC, representing the Tyrrelstown area in Dublin 15. It is our way of showing that reliability and commitment extend beyond the road.</p>
             </div>
-            <div class="about-sponsor-image">
-                <img src="../assets/images/community-sponsorship-team.png" alt="[Coloque o time aqui] team photo">
+            <div class="sponsor-gallery">
+                <button type="button" class="sponsor-gallery-item sponsor-gallery-item-1" data-full="../assets/images/community-sponsorship-tyrrelstown-1.png" aria-label="Expand photo">
+                    <img src="../assets/images/community-sponsorship-tyrrelstown-1.png" alt="Tyrrelstown United FC girls team celebrating a win">
+                </button>
+                <button type="button" class="sponsor-gallery-item sponsor-gallery-item-2" data-full="../assets/images/community-sponsorship-tyrrelstown-2.png" aria-label="Expand photo">
+                    <img src="../assets/images/community-sponsorship-tyrrelstown-2.png" alt="Tyrrelstown United FC girls team on match day">
+                </button>
+                <button type="button" class="sponsor-gallery-item sponsor-gallery-item-3" data-full="../assets/images/community-sponsorship-team2-1.png" aria-label="Expand photo">
+                    <img src="../assets/images/community-sponsorship-team2-1.png" alt="Local youth football team sponsored by JADirect">
+                </button>
             </div>
         </div>
     </section>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded photo" hidden>
+        <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close expanded photo">&times;</button>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Expanded photo" id="lightbox-image">
+    </div>
 </main>
 
 <footer class="footer">
@@ -178,5 +191,6 @@
 <script type="module" src="../assets/js/view-transitions.js"></script>
 <script type="module" src="../assets/js/cookie-consent.js"></script>
 <script type="module" src="../assets/js/nav-menu.js"></script>
+<script type="module" src="../assets/js/lightbox.js"></script>
 </body>
 </html>
