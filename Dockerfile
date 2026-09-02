@@ -10,6 +10,9 @@ COPY public/assets/ /usr/share/nginx/html/assets/
 COPY public/data/ /usr/share/nginx/html/data/
 COPY public/sitemap.xml /usr/share/nginx/html/sitemap.xml
 COPY public/robots.txt /usr/share/nginx/html/robots.txt
+COPY public/favicon.ico /usr/share/nginx/html/favicon.ico
+COPY public/site.webmanifest /usr/share/nginx/html/site.webmanifest
+
 
 COPY public/pages/contact.html.template /etc/nginx/templates/pages/contact.html.template
 ENV NGINX_ENVSUBST_OUTPUT_DIR=/usr/share/nginx/html
