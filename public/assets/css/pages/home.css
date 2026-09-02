@@ -19,7 +19,7 @@
 .hero-image-placeholder {
     position: absolute;
     inset: 0;
-    background: url('../../images/hero-delivery.png') center/cover no-repeat;
+    background: url('../../images/hero-delivery.webp') center/cover no-repeat;
 }
 
 .hero-image-placeholder span {
@@ -193,7 +193,7 @@
 }
 
 .service-image {
-    background: url('../../images/warehouse-loading.png') center/cover no-repeat;
+    background: url('../../images/warehouse-loading.webp') center/cover no-repeat;
     height: 380px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
@@ -331,11 +331,11 @@
 }
 
 .stat-card-visual.photo.van {
-    background-image: url('../../images/fleet-van-square.png');
+    background-image: url('../../images/fleet-van-square.webp');
 }
 
 .stat-card-visual.photo.truck {
-    background-image: url('../../images/fleet-truck-square.png');
+    background-image: url('../../images/fleet-truck-square.webp');
 }
 
 .stat-card-info {
