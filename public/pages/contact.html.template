@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talk to Us – JADirect Logistics</title>
-    <meta name="description" content="Get in touch with the JADirect team for a delivery, a collection or a quote. Based in Dublin, serving all of Ireland.">
+    <title>Talk to Us – J&amp;A Direct Logistics</title>
+    <meta name="description" content="Get in touch with the J&amp;A Direct team for a delivery, a collection or a quote. Based in Dublin, serving all of Ireland.">
 
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicons/favicon-16x16.png">
@@ -15,9 +15,9 @@
     <link rel="icon" href="../favicon.ico" sizes="any">
 
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="JADirect Logistics">
-    <meta property="og:title" content="Talk to Us – JADirect Logistics">
-    <meta property="og:description" content="Get in touch with the JADirect team for a delivery, a collection or a quote. Based in Dublin, serving all of Ireland.">
+    <meta property="og:site_name" content="J&amp;A Direct Logistics">
+    <meta property="og:title" content="Talk to Us – J&amp;A Direct Logistics">
+    <meta property="og:description" content="Get in touch with the J&amp;A Direct team for a delivery, a collection or a quote. Based in Dublin, serving all of Ireland.">
     <meta property="og:url" content="https://jadirect.ie/pages/contact.html">
     <meta property="og:image" content="https://jadirect.ie/assets/images/hero-delivery.webp">
     <link rel="canonical" href="https://jadirect.ie/pages/contact.html">
@@ -36,7 +36,7 @@
     <nav class="navbar">
         <div class="container">
              <a href="../index.html" class="navbar-logo">
-                <img src="../assets/images/logo-white.webp" alt="JADirect Logo" class="logo-img" width="192" height="80">
+                <img src="../assets/images/logo-white.webp" alt="J&amp;A Direct Logo" class="logo-img" width="192" height="80">
              </a>
              <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
                 <span class="nav-toggle-icon"></span>
@@ -84,14 +84,14 @@
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                         <polyline points="22,6 12,13 2,6"/>
                     </svg>
-                    <a href="mailto:support@jadirect.ie">support@jadirect.ie</a>
+                    <a href="mailto:info@jadirect.ie">info@jadirect.ie</a>
                 </div>
 
                 <div class="contact-detail">
                     <svg viewBox="0 0 24 24">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                     </svg>
-                    <a href="tel:+35310000000">+353 1 000 0000</a>
+                    <a href="tel:+353858149976">+353 85 814 9976</a>
                 </div>
 
                 <div class="contact-detail">
@@ -197,7 +197,7 @@
                 <li><a href="legal.html#legal-notice">Legal Notice</a></li>
                 <li><a href="legal.html#cookies" id="cookie-settings-link">Cookie Settings</a></li>
             </ul>
-            <div class="footer-copy">2026 © JADirect Logistics – All rights reserved</div>
+            <div class="footer-copy">2026 © J&amp;A Direct Logistics – All rights reserved</div>
         </div>
     </div>
 </footer>
