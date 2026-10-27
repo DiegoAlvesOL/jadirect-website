@@ -2,41 +2,56 @@
 
 [![CI](https://github.com/DiegoAlvesOL/jadirect-website/actions/workflows/ci.yml/badge.svg)](https://github.com/DiegoAlvesOL/jadirect-website/actions/workflows/ci.yml)
 
-## Sobre o projeto
+## Overview
 
-Site institucional da J&A Direct Logistics, empresa de logística sediada na Irlanda. Cinco páginas principais (Home, About, Fleet, Contact, Legal), mais uma página de confirmação (Thank You) exibida após o envio do formulário de contato. Construído em HTML, CSS e JavaScript vanilla, containerizado com Docker e hospedado no Railway.
+A real client project: the company website for J&A Direct Logistics, a logistics business based in Ireland. Live at [https://jadirect.ie](https://jadirect.ie).
 
-## Rodando localmente
+1. Five pages (Home, About, Fleet, Contact, Legal) plus a Thank You page shown after the contact form is submitted, built with plain HTML, CSS and vanilla JavaScript, no framework.
+2. Served by Nginx inside a Docker container and hosted on Railway.
+3. Quality checks: HTML and CSS linting, Vitest unit tests, pa11y accessibility audits, broken link checks, and a GitHub Actions CI pipeline.
+4. Security: Nginx security headers, including a Content Security Policy. The Web3Forms access key is injected with `envsubst` when the container starts and is never committed to the repository.
+5. The contact form posts natively to Web3Forms, so the site needs no backend of its own.
 
-Pré-requisito: Docker instalado.
+## How I work
+
+1. The work is split into numbered cards, each with a clear scope.
+2. Every card gets its own branch (`feature/`, `chore/` or `docs/`), created before any file is changed.
+3. CI runs on every change, and the branch is merged into `main` once it passes.
+4. Visual refinements are made by replacing CSS files only, without editing the HTML.
+
+## Running locally
+
+Requirement: Docker installed.
 
 ```bash
 docker compose up --build
 ```
 
-O site fica disponível em `http://localhost:8081`.
+The site is available at `http://localhost:8081`.
 
-## Testes
+The contact form needs the environment variables `WEB3FORMS_ACCESS_KEY` and `WEB3FORMS_REDIRECT_URL`. Their values live in a local `.env` file, which is not versioned.
+
+## Tests
 
 ```bash
-npm run lint:html     # valida sintaxe e boas práticas do HTML (htmlhint)
-npm run lint:css      # valida sintaxe e padrões do CSS (stylelint)
-npm test              # testes unitários da lógica de main.js, cookie-consent.js e nav-menu.js (Vitest)
-npm run test:a11y     # auditoria de acessibilidade nas cinco páginas (pa11y-ci)
-npm run test:links    # verifica links internos quebrados (linkinator)
+npm run lint:html     # checks HTML syntax and best practices (htmlhint)
+npm run lint:css      # checks CSS syntax and conventions (stylelint)
+npm test              # unit tests for main.js, cookie-consent.js and nav-menu.js (Vitest)
+npm run test:a11y     # accessibility audit on the five pages (pa11y-ci)
+npm run test:links    # checks for broken internal links (linkinator)
 ```
 
-Os testes de acessibilidade e de links rodam contra o ambiente local, então o container (`docker compose up`) precisa estar de pé antes de executá-los.
+The accessibility and link tests run against the local environment, so the container (`docker compose up`) must be running before you execute them.
 
-## Estrutura
+## Project structure
 
 ```
 jadirect-website/
-├── public/                    # Tudo que é servido ao visitante
+├── public/                    # Everything served to the visitor
 │   ├── index.html
 │   ├── pages/
 │   │   ├── about.html
-│   │   ├── contact.html.template   # template do Contact, access key do Web3Forms injetada em runtime
+│   │   ├── contact.html.template   # Contact template, Web3Forms access key injected at runtime
 │   │   ├── fleet.html
 │   │   ├── legal.html
 │   │   └── thank-you.html
@@ -44,9 +59,9 @@ jadirect-website/
 │   │   ├── css/
 │   │   │   ├── globals.css
 │   │   │   ├── layout.css
-│   │   │   └── pages/          # um CSS por página
+│   │   │   └── pages/          # one CSS file per page
 │   │   ├── js/
-│   │   │   ├── main.js         # data-stat e composição do assunto do formulário
+│   │   │   ├── main.js         # data-stat counters and contact form subject
 │   │   │   ├── cookie-consent.js
 │   │   │   ├── nav-menu.js
 │   │   │   ├── view-transitions.js
@@ -61,15 +76,11 @@ jadirect-website/
 │   ├── unit/                   # Vitest
 │   ├── a11y/                   # pa11y-ci
 │   └── links/                  # linkinator
-├── .github/workflows/          # pipeline de CI
+├── .github/workflows/          # CI pipeline
 ├── Dockerfile
 ├── docker-compose.yml
 ├── nginx.conf
 └── package.json
 ```
 
-A pasta `public/` concentra todo o conteúdo do site. Tudo fora dela é infraestrutura de entrega (Docker, CI, configuração de servidor, ferramentas de teste), e nunca deve ser tocado para resolver um pedido de conteúdo.
-
-## Produção
-
-Site em produção: [https://jadirect.ie](https://jadirect.ie)
+The `public/` folder holds all the site content. Everything outside it is delivery infrastructure (Docker, CI, server configuration, testing tools).
